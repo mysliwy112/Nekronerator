@@ -25,13 +25,6 @@ if len(sys.argv)>1 and sys.argv[1]=="generate":
 		levels=int(sys.argv[2])
 
 
-
-
-
-
-
-
-
 take =	{
   1:0,
   5:1,
@@ -55,11 +48,11 @@ take_back = {v: k for k, v in take.items()}
 
 data=[]
 
-dirs=["./dataset/","./mirror/"]
-for dir in dirs:
-	list=os.listdir(dir)
+dirs="./dataset/"
+for dir in os.listdir(dirs):
+	list=os.listdir(dirs+dir)
 	for filename in list:
-		with open(dir+filename,"r") as file:
+		with open(dirs+dir+filename,"r") as file:
 			d=file.readlines()[2:]
 			d=[a.split(" ") for a in d]
 			d=[[int(b) for b in a] for a in d]

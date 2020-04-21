@@ -20,7 +20,8 @@ for filename in listdir("../in"):
 				herosX=b
 				herosY=a
 				break
-				
+		if(herosX!=0)
+			break;
 	
 	with open("../out/"+"BD_CLEV"+str(i)+".FLD","w") as file:
 		file.write("{:03d} ".format(width))
